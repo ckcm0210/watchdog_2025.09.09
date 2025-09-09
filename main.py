@@ -115,6 +115,20 @@ def main():
         ve = getattr(settings, 'VALUE_ENGINE', 'polars')
         csvp = getattr(settings, 'CSV_PERSIST', False)
         print(f"[env] python={py} | VALUE_ENGINE={ve} | CSV_PERSIST={csvp} | sys.executable={exe}")
+        # 顯示主要套件版本
+        try:
+            from utils.env_info import format_packages_versions_line, format_detected_packages_versions_line
+            width = int(getattr(settings, 'DEBUG_WRAP_WIDTH', 0) or getattr(settings, 'CONSOLE_TERM_WIDTH_OVERRIDE', 120) or 120)
+            for ln in format_packages_versions_line('[env]', width):
+                print(ln)
+            # 動態掃描源碼 import（第三方），補充版本資訊
+            try:
+                for ln in format_detected_packages_versions_line('[env]', width, workspace_root='.'):
+                    print(ln)
+            except Exception:
+                pass
+        except Exception:
+            pass
     except Exception:
         pass
 
