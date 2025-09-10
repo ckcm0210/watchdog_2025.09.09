@@ -1,0 +1,42 @@
+python_crash_20250910_093352.log
+
+程式啟動: 2025-09-10 09:35:23.347014
+Python版本: 3.11.3 | packaged by Anaconda, Inc. | (main, Apr 19 2023, 23:46:34) [MSC v.1916 64 bit (AMD64)]
+執行環境: Standard Python
+==================================================
+
+Windows fatal exception: code 0x80000003
+
+Thread 0x000001c4 (most recent call first):
+  File "<frozen genericpath>", line 55 in getmtime
+  File "C:\Protb1\KCCHENG\watchdog_monitoring_v10\core\watcher.py", line 114 in _poll_for_stability
+  File "C:\Protb1\KCCHENG\watchdog_monitoring_v10\core\watcher.py", line 160 in <lambda>
+  File "C:\ProgramData\anaconda3\Lib\threading.py", line 1394 in run
+  File "C:\ProgramData\anaconda3\Lib\threading.py", line 1038 in _bootstrap_inner
+  File "C:\ProgramData\anaconda3\Lib\threading.py", line 995 in _bootstrap
+
+Thread 0x0000044c (most recent call first):
+  File "C:\ProgramData\anaconda3\Lib\concurrent\futures\thread.py", line 81 in _worker
+  File "C:\ProgramData\anaconda3\Lib\threading.py", line 1394 in run
+  File "C:\ProgramData\anaconda3\Lib\threading.py", line 1038 in _bootstrap_inner
+  File "C:\ProgramData\anaconda3\Lib\threading.py", line 995 in _bootstrap
+
+Current thread 0x000004dc (most recent call first):
+  Garbage-collecting
+  File "C:\Protb1\KCCHENG\watchdog_monitoring_v10\core\excel_parser.py", line 632 in dump_excel_cells_with_timeout
+  File "C:\Protb1\KCCHENG\watchdog_monitoring_v10\core\comparison.py", line 294 in compare_excel_changes
+  File "C:\Protb1\KCCHENG\watchdog_monitoring_v10\core\watcher.py", line 400 in on_modified
+  File "C:\ProgramData\anaconda3\Lib\site-packages\watchdog\events.py", line 272 in dispatch
+  File "C:\ProgramData\anaconda3\Lib\site-packages\watchdog\observers\api.py", line 372 in dispatch_events
+  File "C:\ProgramData\anaconda3\Lib\site-packages\watchdog\observers\api.py", line 199 in run
+  File "C:\ProgramData\anaconda3\Lib\threading.py", line 1038 in _bootstrap_inner
+  File "C:\ProgramData\anaconda3\Lib\threading.py", line 995 in _bootstrap
+
+Thread 0x000003f4 (most recent call first):
+  File "C:\ProgramData\anaconda3\Lib\site-packages\watchdog\observers\winapi.py", line 339 in read_directory_changes
+  File "C:\ProgramData\anaconda3\Lib\site-packages\watchdog\observers\winapi.py", line 391 in read_events
+  File "C:\ProgramData\anaconda3\Lib\site-packages\watchdog\observers\winapi.py", line 80 in _read_events
+  File "C:\ProgramData\anaconda3\Lib\site-packages\watchdog\observers\winapi.py", line 83 in queue_events
+  File "C:\ProgramData\anaconda3\Lib\site-packages\watchdog\observers\api.py", line 148 in run
+  File "C:\ProgramData\anaconda3\Lib\threading.py", line 1038 in _bootstrap_inner
+  File "C:\ProgramData\anaconda3\Lib\threading.py", line 995 in _bootstrap
